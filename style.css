@@ -1,0 +1,49 @@
+body {
+    display: flex;
+    justify-content: center;
+    background-color: #baa3ff;
+}
+
+#container {
+    display: flex;
+    flex-direction: column;
+    width: 25rem;
+    height: 30rem;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+}
+
+#window {
+    height: 8rem;
+    width: 23rem;
+    background-color: white;
+    outline: 0.5rem solid grey;
+
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+}
+
+.button {
+    background-color: white;
+    width: 5rem;
+    height: 5rem;
+    
+}
+
+#window, .button, .operator {
+    border-radius: 20px;
+    margin: 0.5rem;
+    outline: 0.35rem solid rgb(0, 0, 73);
+}
+
+.operator {
+    background-color: rgb(94, 0, 148);
+    width: 5rem;
+    height: 5rem;
+    
+}
+
