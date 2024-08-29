@@ -23,7 +23,6 @@ let input2 = []
 function acceptInput(value) {
     if (['+', '-', 'x', '/', '9'].includes(value)) {
         operator = value;
-        console.log(operator);
     }
     else if (operator.length === 0) {
         input1.push(value);
@@ -56,17 +55,27 @@ function solve(num1, num2, symbol) {
     parseInt(input1.join(''));
     parseInt(input2.join(''));
     if (symbol === '+') {
-        return (add(num1, num2))
+        let total = add(num1, num2);
+        updateDisplay(total);
+        return total
     }
     else if (symbol === '-') {
-        return subtract(num1, num2)
+        let total = subtract(num1, num2)
+        updateDisplay(total);
+        return total
     }
     else if (symbol === 'x') {
-        return multiply(num1, num2)
+        let total = multiply(num1, num2)
+        updateDisplay(total);
+        return total
     }
     else if (symbol === '/') {
-        return divide(num1, num2)
+        let total = divide(num1, num2)
+        updateDisplay(total);
+        return total
     }
+    
+
 }
 
 functions[4].textContent = '=';
@@ -92,9 +101,11 @@ function divide(num1, num2) {
     return (num1 / num2)
 }
 
-function hi() {
-    console.log('hi')
+function updateDisplay(value) {
+    const displayWindow = document.querySelector('#window');
+    displayWindow.textContent = value;
 }
+
 
 
 
