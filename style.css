@@ -15,11 +15,23 @@ body {
 }
 
 #window {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
     height: 8rem;
     width: 23rem;
     background-color: white;
-    outline: 0.5rem solid grey;
+    font-size: 3.5rem;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-weight: bolder;
+    color: rgb(94, 0, 148);
+    border-radius: 20px;
+    margin: 0.5rem;
+    outline: 0.35rem solid rgb(0, 0, 73);
+}
 
+#displaytext {
+    margin: 0rem 0.8rem;
 }
 
 .row {
@@ -35,7 +47,7 @@ body {
 }
 
 .number, .function {
-    font-size: 4rem;
+    font-size: 3.5rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -43,7 +55,7 @@ body {
     font-weight: bolder;
 }
 
-#window, .number, .function {
+.number, .function {
     border-radius: 20px;
     margin: 0.5rem;
     outline: 0.35rem solid rgb(0, 0, 73);
