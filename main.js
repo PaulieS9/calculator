@@ -64,22 +64,30 @@ function solve(num1, num2, symbol) {
     if (symbol === '+') {
         let total = add(num1, num2);
         updateDisplay(total);
-        return total
+        input1 = total;
+        input2 = '';
+        return input1
     }
     else if (symbol === '-') {
         let total = subtract(num1, num2)
         updateDisplay(total);
-        return total
+        input1 = total;
+        input2 = '';
+        return input1
     }
     else if (symbol === 'x') {
         let total = multiply(num1, num2)
         updateDisplay(total);
-        return total
+        input1 = total;
+        input2 = '';
+        return input1
     }
     else if (symbol === '/') {
         let total = divide(num1, num2)
         updateDisplay(total);
-        return total
+        input1 = total;
+        input2 = '';
+        return input1
     }
     
 
