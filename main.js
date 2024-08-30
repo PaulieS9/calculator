@@ -1,4 +1,5 @@
 let container = document.querySelector('#container');
+const displayWindow = document.querySelector('#displaytext');
 
 for (i = 0; i < 4; ++i) {
     const row = document.createElement('div');
@@ -16,22 +17,21 @@ for (i = 0; i < 4; ++i) {
     }
 }
 
-let input1 = []
+let input1 = ''
 let operator = ''
-let input2 = []
+let input2 = ''
 
 function acceptInput(value) {
-    if (['+', '-', 'x', '/', '9'].includes(value)) {
+    if (['+', '-', 'x', '/'].includes(value)) {
         operator = value;
     }
     else if (operator.length === 0) {
-        input1.push(value);
+        input1 += value
     }
     else if (operator.length === 1) {
-        input2.push(value);
+        input2 += value
     }
 }
-
 const numberButtons = document.getElementsByClassName('number');
 
 for (let n = 0; n < numberButtons.length - 1; n++) {
@@ -50,10 +50,17 @@ for (let f = 0; f < functions.length - 3; f++) {
 }
 
 functions[3].textContent = 'C';
+functions[3].addEventListener('click', clear);
+
+function clear() {
+    input1 = '';
+    input2 = '';
+    operator = '';
+    displayWindow.textContent = '';
+    
+}
 
 function solve(num1, num2, symbol) {
-    parseInt(input1.join(''));
-    parseInt(input2.join(''));
     if (symbol === '+') {
         let total = add(num1, num2);
         updateDisplay(total);
@@ -90,19 +97,20 @@ function add(num1, num2) {
 }
 
 function subtract(num1, num2) {
-    return (num1 - num2)
+    return (Number(num1) - Number(num2))
 }
 
 function multiply(num1, num2) {
-    return (num1 * num2)
+    return (Number(num1) * Number(num2))
 }
 
 function divide(num1, num2) {
-    return (num1 / num2)
+    return (Number(num1) / Number(num2))
 }
 
+
+
 function updateDisplay(value) {
-    const displayWindow = document.querySelector('#window');
     displayWindow.textContent = value;
 }
 
