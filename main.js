@@ -24,12 +24,15 @@ let input2 = ''
 function acceptInput(value) {
     if (['+', '-', 'x', '/'].includes(value)) {
         operator = value;
+        updateDisplay(value);
     }
     else if (operator.length === 0) {
         input1 += value
+        updateDisplay(input1)
     }
     else if (operator.length === 1) {
         input2 += value
+        updateDisplay(input2)
     }
 }
 const numberButtons = document.getElementsByClassName('number');
